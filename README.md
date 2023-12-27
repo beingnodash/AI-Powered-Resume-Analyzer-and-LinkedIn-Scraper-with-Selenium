@@ -1,23 +1,33 @@
-# AI-Powered Resume Analyzer and LinkedIn Scraper with Selenium
+# AI驱动的简历分析器和领英数据爬取工具
 
-**Introduction**
+## **简介**
 
-Resume Analyzer AI" leverages the power of LLM and OpenAI as an advanced Streamlit application, specializing in thorough resume analysis. It excels at summarizing the resume, evaluating strengths, identifying weaknesses, and offering personalized improvement suggestions, while also recommending the perfect job titles. Additionally, it seamlessly employs Selenium to extract vital LinkedIn data, encompassing company names, job titles, locations, job URLs, and detailed job descriptions. In essence, Resume Analyzer AI simplifies the job-seeking journey by equipping users with comprehensive insights to elevate their career opportunities.
+Resume Analyzer AI是一个Streamlit应用程序，利用LLM和OpenAI的功能,专门进行全面详细的简历分析。主要功能是：
 
+总结简历
 
-**Table of Contents**
+评估优势
 
-1. Key Technologies and Skills
-2. Installation
-3. Usage
-4. Features
-5. Contributing
-6. License
-7. Contact
+识别劣势
 
+提供个性化的改进建议，同时推荐最合适的职位
 
-**Key Technologies and Skills**
-- Python
+Resume Analyzer AI还有一个实验性功能：使用Selenium从领英提取数据，包括公司、职位、地点、职位链接和职位描述。
+
+总之，Resume Analyzer AI是一个由生成式语言模型支持的简历分析器，能够为用户提供全面的见解，从而简化、优化他们的求职过程、以提升他们的职业机会。
+
+## **目录**
+
+1. 关键技术
+2. 安装
+3. 使用
+4. 功能
+5. 贡献
+6. 许可
+7. 联系方式
+
+## **依赖或包**
+
 - Numpy
 - Pandas
 - Streamlit
@@ -26,14 +36,13 @@ Resume Analyzer AI" leverages the power of LLM and OpenAI as an advanced Streaml
 - OpenAI
 - Selenium
 
+## **安装**
 
-**Installation**
-
-To run this project, you need to install the following packages:
+运行这个项目，需要安装以下软件包:
 
 ```python
 pip install numpy
-pip install pandas
+pip install pandas 
 pip install streamlit
 pip install streamlit_option_menu
 pip install streamlit_extras
@@ -45,68 +54,64 @@ pip install faiss-cpu
 pip install selenium
 ```
 
-**Usage**
+## **使用**
 
-To use this project, follow these steps:
+使用这个项目，请执行以下步骤：
 
-1. Clone the repository: ```git clone https://github.com/gopiashokan/Resume-Analyzer-Artificial-Intelligence.git```
-2. Install the required packages: ```pip install -r requirements.txt```
-3. Run the Streamlit app: ```streamlit run app.py```
-4. Access the app in your browser at ```http://localhost:8501```
+1. 克隆存储库:`git clone https://github.com/beingnodash/ResumeAnalyzerAI.git`
+2. 安装所需的包:`pip install -r requirements.txt`
+3. 运行Streamlit应用程序:`streamlit run app.py`
+4. 在浏览器中访问该应用程序:`http://localhost:8501`
 
+## **功能**
 
-**Features**
+### **用户体验:**
 
-**Easy User Experience:**
-- Resume Analyzer AI makes it easy for users. You can upload your resume and enter your OpenAI API key without any hassle. The application is designed to be user-friendly so that anyone can use its powerful resume analysis features.
-- It also uses the PyPDF2 library to quickly extract text from your uploaded resume, which is the first step in doing a thorough analysis.
+- Resume Analyzer AI的用户操作方式比较简单：上传简历、输入OpenAI API密钥，即可使用它的所有功能。
 
-**Smart Text Analysis with Langchain:**
-- What makes it special is how it analyzes text. It uses a smart method called the Langchain library to break long sections of text from resumes into smaller chunks, making them more meaningful.
-- This clever technique improves the accuracy of the resume analysis, and it gives users practical advice on how to enhance their job prospects.
+### Langchain提供的智能文本分析
 
-**Enhanced OpenAI Integration with FAISS:**
-- Seamlessly connecting to OpenAI services, the application establishes a secure connection using your OpenAI API key. This integration forms the basis for robust interactions, facilitating advanced analysis and efficient information retrieval.
-- It uses the FAISS(Facebook AI Similarity Search) library to convert both the text chunks and query text data into numerical vectors, simplifying the analysis process and enabling the retrieval of pertinent information.
+- 项目的核心功能是简历文本的智能分析器。它使用名为Langchain的库将简历中的长文本拆分成更小的块，使其更有意义。
+- 这种分拆技术提高了简历分析的准确性。
 
-**Intelligent Chunk Selection and LLM:**
-- Utilizing similarity search, Resume Analyzer AI compares the query and chunks, enabling the selection of the top 'K' most similar chunks based on their similarity scores.
-- Simultaneously, the application creates an OpenAI object, particularly an LLM (Large Language Model), using the ChatGPT 3.5 Turbo model and your OpenAI API key.
+### **FAISS增强的OpenAI集成:**
 
-**Robust Question-Answering Pipeline:**
-- This integration establishes a robust question-answering (QA) pipeline, making use of the load_qa_chain function, which encompasses multiple components, including the language model.
-- The QA chain efficiently handles lists of input documents (docs) and a list of questions (chunks), with the response variable capturing the results, such as answers to the questions derived from the content within the input documents.
+- 它与OpenAI服务无缝连接,使用OpenAI API密钥建立安全连接。这种集成构成了强大交互的基础,促进高级分析和高效的信息检索。
+- 它使用FAISS(Facebook AI相似性搜索)库将文本块和查询文本数据转换为数值向量，简化了分析过程，并能够检索相关信息。
 
-**Comprehensive Resume Analysis:**
-- **Summary:** Resume Analyzer AI provides a quick, comprehensive overview of resumes, emphasizing qualifications, key experience, skills, projects, and achievements. Users can swiftly grasp profiles, enhancing review efficiency and insight.
-- **Strength:** Effortlessly conducting a comprehensive resume review, it analyzes qualifications, experience, and accomplishments. It subsequently highlights strengths, providing job seekers with a competitive edge.
-- **Weakness:** AI conducts thorough analysis to pinpoint weaknesses and offers tailored solutions for transforming them into strengths, empowering job seekers.
-- **Suggestion:** AI provides personalized job title recommendations that align closely with the user's qualifications and resume content, facilitating an optimized job search experience.
+### **智能文本块选择和LLM:**
 
-**Streamlit application:** [https://gopiashokan-resume-ai-selenium.streamlit.app/](https://gopiashokan-resume-ai-selenium.streamlit.app/)
+- 利用相似性搜索,Resume Analyzer AI比较查询和文本块,基于相似度分数选择前K个最相似的文本块。
+- 同时,该应用程序创建一个OpenAI对象,特别是一个LLM(大型语言模型),使用ChatGPT 3.5 Turbo模型和你的OpenAI API密钥。
 
-**Selenium-Powered LinkedIn Data Scraping:**
-- Utilizing Selenium and a Webdriver automated test tool, this feature enables users to input job titles, automating the data scraping process from LinkedIn. The scraped data includes crucial details such as company names, job titles, locations, URLs, and comprehensive job descriptions.
-- This streamlined process enables users to easily review scraped job details and apply for positions, simplifying their job search and application experience.
-- **Important Note:** Please be aware that this feature is currently available for use in the local version of this Streamlit application. Due to certain limitations, this feature may not function as intended in the deployed, online version. We recommend using this feature in the local environment for optimal results.
+### **问答流水线:**
 
-**Project Demo Video:** [https://youtu.be/wFouWeK7NPg](https://youtu.be/wFouWeK7NPg)
+- 这种集成建立了一个强大的问答流水线,利用load_qa_chain函数,它包含多个组件,包括语言模型。
+- QA链有效地处理输入文档列表和问题列表,响应变量捕获结果,例如从输入文档内容中派生的答案。
 
-**Contributing**
+### **简历分析:**
 
-Contributions to this project are welcome! If you encounter any issues or have suggestions for improvements, please feel free to submit a pull request.
+- **总结:** Resume Analyzer AI对简历进行快速全面概述,强调资质、主要经历、技能、项目和成就。用户可以快速掌握个人情况，提高复习效率和洞察力。
+- **优势:** 它可以轻松进行全面的简历审查，分析资质、经验和成就。
+- **劣势:** AI进行全面分析以找出弱点，并提供量身定制的解决方案，将弱点转化为优势，赋能求职者。
+- **建议:** AI提供与用户资质和简历内容高度匹配的个性化职位建议，优化求职体验。
 
+### **Selenium驱动的领英数据爬取:**
 
-**License**
+- 利用Selenium和自动化测试工具Webdriver，这个功能允许用户输入职位，自动从领英爬取数据。爬取的数据包括关键细节,如公司名称、职位、地点、URL和详细的职位描述。
+- 这种精简的流程使用户可以轻松查看爬取的职位详情并申请职位，简化他们的求职和申请过程。
+- **重要提示:** 此功能目前仅可在本Streamlit应用程序的本地版本中使用。
 
-This project is licensed under the MIT License. Please review the LICENSE file for more details.
+### **贡献**
 
+欢迎对这个项目做出贡献！如果你遇到任何问题或有改进建议，请随时提交pull请求。
 
-**Contact**
+如果还有任何其他问题或询问，请随时联系。我们很乐意帮助您解答任何问题。
 
-📧 Email: gopiashokankiot@gmail.com 
+## **许可**
 
-🌐 LinkedIn: [linkedin.com/in/gopiashokan](https://www.linkedin.com/in/gopiashokan)
+该项目使用MIT许可证授权。请查看LICENSE文件以获取更多详细信息。
 
-For any further questions or inquiries, feel free to reach out. We are happy to assist you with any queries.
+## **联系方式**
 
+📧 电子邮件: chen.xibo@gmail.com

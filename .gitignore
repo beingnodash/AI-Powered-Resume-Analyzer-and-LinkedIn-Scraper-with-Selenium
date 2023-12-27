@@ -1,0 +1,13 @@
+# Environments
+venv/
+# secrets
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# streamlit
+.streamlit/
+
+# test data
+content/

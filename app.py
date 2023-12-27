@@ -291,7 +291,7 @@ with st.sidebar:
 if option == 'Summary':
 
     # file upload
-    pdf = st.file_uploader(label='', type='pdf')
+    pdf = st.file_uploader(label='upload your resume', type='pdf')
     openai_api_key = st.text_input(label='OpenAI API Key', type='password')
 
     try:
